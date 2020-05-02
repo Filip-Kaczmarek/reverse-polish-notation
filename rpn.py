@@ -1,9 +1,4 @@
 expressions = []
-line = input('Podaj wyrazenie: ')
-
-while line != '':
-    expressions.append(line)
-    line = input('Podaj wyrazenie: ')
 
 not_operators = ["NOT", "~", "¬"]
 
@@ -68,5 +63,18 @@ def ONP(expression):
             stack.append(val)
     return stack.pop()
 
-for expression in expressions:
-    print(ONP(expression))
+print ('1. Enter the expressions in reverse polish notation', '\n2. Exit')
+choice = input('Enter number 1 or 2: ')
+while (choice != '1') and (choice != '2'):
+    print ('1. Enter the expressions in reverse polish notation', '\n2. Exit')
+    choice = input('Enter number 1 or 2: ')
+
+while choice != '2':
+    while choice == '1':
+        line = input('Enter the expression: ')
+        print('Expression in standard bracket notation: ', ONP(line), '\n')
+        print ('1. Enter the expression in reverse polish notation', '\n2. Exit')
+        choice = input('Enter number 1 or 2: ')
+        while (choice != '1') and (choice != '2'):
+            print ('1. Enter the expressions in reverse polish notation', '\n2. Exit')
+            choice = input('Enter number 1 or 2: ')
